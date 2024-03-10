@@ -1,0 +1,45 @@
+[
+    {
+      "id": "520edbca-598f-489e-b724-1b9f4b93f1d7",
+      "name": "Iceland",
+      "currency_code": "ISK",
+      "mobile_country_code": "+354",
+      "country_code": "IS"
+    },
+    {
+      "id": "541d1232-58ce-4d64-83d6-556a42209eb7",
+      "name": "India",
+      "currency_code": "INR",
+      "mobile_country_code": "+91",
+      "country_code": "IN"
+    },
+    {
+      "id": "b7ff06c0-ea07-40a2-8dc1-5d0e6d9d7862",
+      "name": "Algeria",
+      "currency_code": "DZD",
+      "mobile_country_code": "+213",
+      "country_code": "DZ"
+    },
+    {
+      "id": "60165cfa-cdf3-47b1-b515-2339c43ccfa8",
+      "name": "Bosnia and Herzegovina",
+      "currency_code": "BAM",
+      "mobile_country_code": "+387",
+      "country_code": "BA"
+    },
+    {
+      "id": "02e42b9a-00a9-4652-8458-be88d51eae4e",
+      "name": "Nepal",
+      "currency_code": "NPR",
+      "mobile_country_code": "+977",
+      "country_code": "NP"
+    },
+    {
+      "id": "d9ad9e8c-f1a4-408a-b3fb-f83d12587aaf",
+      "name": "Japan",
+      "currency_code": "JPY",
+      "mobile_country_code": "+81",
+      "country_code": "JP"
+    }
+  ]
+  
