@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { Button } from '@mui/material';
 import Table from '@mui/material/Table';
@@ -12,20 +12,39 @@ import { useRouter } from 'next/router';
 import EditIcon from '@mui/icons-material/Edit';
 import DeleteIcon from '@mui/icons-material/Delete';
 import ArrowBackIcon from '@mui/icons-material/ArrowBack';
-import { FlexHeader, Header, StyledTableCell } from './styles';
+import Dialog from '@mui/material/Dialog';
+import DialogActions from '@mui/material/DialogActions';
+import DialogTitle from '@mui/material/DialogTitle';
 import { removeBeneficiary } from '@/redux/userSlice';
+import { FlexHeader, Header, StyledTableCell } from './styles';
 
 function BeneficiaryList() {
 	const router = useRouter();
 	const dispatch = useDispatch();
+
+	const [open, setOpen] = useState(false);
+	const [selectedId, setSelectedId] = useState();
+
 	const { beneficiaries } = useSelector((state) => state?.user);
 
 	const handleEdit = (id) => {
 		router.push(`/beneficiaries/edit/${id}`);
 	};
 
-	const handleDelete = (id) => {
-		dispatch(removeBeneficiary(id));
+	const handleDeleteModal = (id) => {
+		setSelectedId(id);
+		setOpen(true);
+	};
+
+	const handleClose = () => {
+		setOpen(false);
+		setSelectedId(false);
+	};
+
+	const handleDelete = () => {
+		dispatch(removeBeneficiary(selectedId));
+		setSelectedId();
+		setOpen(false);
 	};
 
 	return (
@@ -74,7 +93,7 @@ function BeneficiaryList() {
 										style={{ marginRight: 8, cursor: 'pointer' }}
 									/>
 									<DeleteIcon
-										onClick={() => handleDelete(row.id)}
+										onClick={() => handleDeleteModal(row.id)}
 										style={{ cursor: 'pointer' }}
 									/>
 								</TableCell>
@@ -83,6 +102,22 @@ function BeneficiaryList() {
 					</TableBody>
 				</Table>
 			</TableContainer>
+			<Dialog
+				open={open}
+				onClose={handleClose}
+				aria-labelledby="alert-dialog-title"
+				aria-describedby="alert-dialog-description"
+			>
+				<DialogTitle id="alert-dialog-title">
+					Are you sure you want to delete this user?
+				</DialogTitle>
+				<DialogActions>
+					<Button onClick={handleDelete}>Yes</Button>
+					<Button onClick={handleClose} autoFocus>
+						No
+					</Button>
+				</DialogActions>
+			</Dialog>
 		</>
 	);
 }
