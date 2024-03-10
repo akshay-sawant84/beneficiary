@@ -30,7 +30,7 @@ function AddEditBeneficiary({ isEdit, prefillData }) {
 
 		setTimeout(() => {
 			router.push('/beneficiaries');
-		}, 2000);
+		}, 1000);
 	};
 
 	const handleCloseSnackbar = () => {
