@@ -1,0 +1,26 @@
+name: Mandatory Approval
+
+on:
+   pull_request_review:
+    types: [submitted]
+
+jobs:
+  approved:
+    if: github.event.review.state == 'approved' && github.event.pull_request.base.ref == 'main'
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Check for mandatory approval
+        run: |
+          # Get the list of reviewers from the pull request
+          reviewers=$(curl -s -H "Authorization: token ${{ secrets.GITHUB_TOKEN }}" \
+                      "https://api.github.com/repos/${{ github.repository }}/pulls/${{ github.event.pull_request.number }}/reviews" | \
+                      jq -r '.[] | select(.state == "APPROVED") | .user.login')
+
+          # Check if at least one mandatory reviewer has approved the PR
+          if [[ $(echo "$reviewers" | grep -c -E "raj-potdar|Yawar008") -gt 0 ]]; then
+            echo "At least one mandatory approval received."
+          else
+            echo "No mandatory approvals received."
+            exit 1
+          fi
