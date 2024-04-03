@@ -20,6 +20,7 @@ import { setUserDetails, resetState } from '@/redux/userSlice';
 import isEmpty from '@/utils/isEmpty';
 
 function Home() {
+	console.log('hello test');
 	const router = useRouter();
 
 	const [openSnackBar, setOpenSnackBar] = useState(false);
