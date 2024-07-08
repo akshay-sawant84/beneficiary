@@ -9,7 +9,7 @@ export const controls = [
   {
     controllerType: "input",
     type: "text",
-    name: "fullName",
+    name: "full_name",
     id: "outlined-error-helper-text",
     label: "Full Name",
     grid: 6,
@@ -90,19 +90,20 @@ export const controls = [
         value: true,
         message: "Mobile Number is required",
       },
-      //   validate: (value) => {
-      //     const { country_code, number } = value || {};
+      validate: (value) => {
+        console.log("value", value);
+        const { country_code, number } = value || {};
 
-      //     if (!country_code) {
-      //       return "Mobile Number Country Code is Required";
-      //     }
+        if (!country_code) {
+          return "Mobile Number Country Code is Required";
+        }
 
-      //     if (!number) {
-      //       return "Mobile Number is required";
-      //     }
+        if (!number) {
+          return "Mobile Number is required";
+        }
 
-      //     return undefined;
-      //   },
+        return undefined;
+      },
     },
   },
   {
@@ -125,6 +126,7 @@ export const controls = [
 
 export const controlMapping = {
   input: InputController,
+  adhar: InputController,
   select: SelectController,
   countryMobile: MobileNumberController,
   textArea: TextFieldController,

@@ -11,21 +11,28 @@ function InputController(props) {
       name={name}
       defaultValue={defaultValue}
       rules={validation}
-      render={({ field: { onChange, onBlur, value } }) => {
+      render={({
+        field: { onChange, onBlur, value },
+        formState: { errors },
+      }) => {
+        console.log("errs");
         return (
-          <Input
-            {...rest}
-            id={name}
-            value={value}
-            onChange={(event) => {
-              onChange(event);
-              rest.onChange?.(event);
-            }}
-            onBlur={(event) => {
-              onBlur(event);
-              rest.onBlur?.(event);
-            }}
-          />
+          <>
+            <Input
+              {...rest}
+              id={name}
+              value={value}
+              onChange={(event) => {
+                onChange(event);
+                rest.onChange?.(event);
+              }}
+              onBlur={(event) => {
+                onBlur(event);
+                rest.onBlur?.(event);
+              }}
+            />
+            {!errors[name] && value && "Adhar card is validated"}
+          </>
         );
       }}
     />

@@ -22,8 +22,10 @@ import { setUserDetails, resetState } from "@/redux/userSlice";
 import isEmpty from "@/utils/isEmpty";
 import { generateZodSchema } from "@/utils/schemaValidator";
 import { generateYupSchema } from "@/utils/yupSchemaValidator";
+import { useTranslation } from "react-i18next";
 
 function Home() {
+  const { t } = useTranslation("home");
   const router = useRouter();
 
   const [openSnackBar, setOpenSnackBar] = useState(false);
@@ -61,9 +63,9 @@ function Home() {
   return (
     <Container>
       <FormContainer>
-        <MainHeading>Beneficiary</MainHeading>
+        <MainHeading>{t("beneficiary")}</MainHeading>
         <FlexHeader>
-          <Heading>Bank Customer Details</Heading>
+          <Heading>{t("heading")}</Heading>
           {!isEmpty(user) && (
             <Button variant="contained" type="submit" onClick={handleRoute}>
               Manage Beneficiaries

@@ -13,7 +13,6 @@ function SelectMobileNumber({
   disable_country_code = false,
   ...rest
 }) {
-  console.log("restErrors", rest?.errors);
   const { [codeKey]: country_code = "", [numberKey]: number = "" } =
     value || {};
 
@@ -47,8 +46,6 @@ function SelectMobileNumber({
           name="mobile_number"
           type="number"
           value={number || (value || {})[numberKey]}
-          error={rest.errors}
-          helperText={rest?.errors?.number?.message}
           onChange={handleNumberChange}
         />
       </MobileNumber>

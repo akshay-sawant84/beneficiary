@@ -1,0 +1,47 @@
+{
+  "beneficiary": "Beneficiary",
+  "heading": "Bank Customer Details",
+  "full_name": {
+    "label": "Full Name",
+    "validation": {
+      "required": {
+        "message": "Full Name is required"
+      },
+      "maxLength": {
+        "message": "Input exceeds maximum length of 3 characters"
+      }
+    }
+  },
+  "country": {
+    "label": "Country",
+    "validation": {
+      "required": {
+        "message": "Country is required"
+      }
+    }
+  },
+  "address": {
+    "label": "Address",
+    "validation": {
+      "required": {
+        "message": "Address is required"
+      }
+    }
+  },
+  "mobileNumber": {
+    "label": "Mobile Number",
+    "validation": {
+      "required": {
+        "message": "Mobile Number is required"
+      }
+    }
+  },
+  "pincode": {
+    "label": "Pin Code",
+    "validation": {
+      "required": {
+        "message": "Pin Code is required"
+      }
+    }
+  }
+}

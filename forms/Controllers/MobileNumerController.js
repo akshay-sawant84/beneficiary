@@ -11,17 +11,13 @@ function MobileNumberController({ itemKey, name, value, control, ...rest }) {
       defaultValue={value}
       rules={rest.rules}
       shouldUnregister={rest.shouldUnregister}
-      render={({
-        field: { onChange, onBlur, value: newValue },
-        formState: { errors },
-      }) => (
+      render={({ field: { onChange, onBlur, value: newValue } }) => (
         <MobileNumberSelect
           {...rest}
           key={itemKey}
           onChange={onChange}
           value={newValue}
           onBlur={onBlur}
-          errors={errors[name]}
         />
       )}
     />

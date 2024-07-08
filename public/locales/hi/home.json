@@ -1,0 +1,48 @@
+{
+    "beneficiary": "लाभार्थी",
+    "heading": "बैंक ग्राहक विवरण",
+    "full_name": {
+      "label": "पूरा नाम",
+      "validation": {
+        "required": {
+          "message": "पूरा नाम आवश्यक है"
+        },
+        "maxLength": {
+          "message": "इनपुट की अधिकतम लंबाई 3 वर्णों से अधिक है"
+        }
+      }
+    },
+    "country": {
+      "label": "देश",
+      "validation": {
+        "required": {
+          "message": "देश आवश्यक है"
+        }
+      }
+    },
+    "address": {
+      "label": "पता",
+      "validation": {
+        "required": {
+          "message": "पता आवश्यक है"
+        }
+      }
+    },
+    "mobileNumber": {
+      "label": "मोबाइल नंबर",
+      "validation": {
+        "required": {
+          "message": "मोबाइल नंबर आवश्यक है"
+        }
+      }
+    },
+    "pincode": {
+      "label": "पिन कोड",
+      "validation": {
+        "required": {
+          "message": "पिन कोड आवश्यक है"
+        }
+      }
+    }
+  }
+  

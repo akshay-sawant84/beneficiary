@@ -1,0 +1,48 @@
+{
+    "beneficiary": "लाभार्थी",
+    "heading": "बँक ग्राहकांचे तपशील",
+    "full_name": {
+      "label": "पूर्ण नाव",
+      "validation": {
+        "required": {
+          "message": "पूर्ण नाव आवश्यक आहे"
+        },
+        "maxLength": {
+          "message": "इनपुटची अधिकतम लांबी ३ अक्षरांपेक्षा अधिक आहे"
+        }
+      }
+    },
+    "country": {
+      "label": "देश",
+      "validation": {
+        "required": {
+          "message": "देश आवश्यक आहे"
+        }
+      }
+    },
+    "address": {
+      "label": "पत्ता",
+      "validation": {
+        "required": {
+          "message": "पत्ता आवश्यक आहे"
+        }
+      }
+    },
+    "mobileNumber": {
+      "label": "मोबाइल नंबर",
+      "validation": {
+        "required": {
+          "message": "मोबाइल नंबर आवश्यक आहे"
+        }
+      }
+    },
+    "pincode": {
+      "label": "पिन कोड",
+      "validation": {
+        "required": {
+          "message": "पिन कोड आवश्यक आहे"
+        }
+      }
+    }
+  }
+  

@@ -1,6 +1,16 @@
 import * as Yup from "yup";
+import { useTranslation } from "next-i18next";
+
+const checkAadhaarExists = async () => {
+  const response = await fetch(
+    `https://mocki.io/v1/c29621ae-2b54-4b8f-888d-fb798491b624`
+  );
+  const data = await response.json();
+  return data.validation;
+};
 
 export const generateYupSchema = (controls) => {
+  const { t } = useTranslation("home");
   const schema = controls.reduce((acc, control) => {
     let fieldSchema;
 
@@ -24,6 +34,25 @@ export const generateYupSchema = (controls) => {
           })
           .required("Country code and Mobile number are required");
         break;
+      case "adhar":
+        fieldSchema = Yup.string()
+          .required("Aadhaar number is required")
+          .matches(/^\d{12}$/, "Aadhaar number must be exactly 12 digits")
+          .test(
+            "checkAadhaarExists",
+            "Aadhaar number is incorrect",
+            async (value) => {
+              if (value) {
+                if (value && /^\d{12}$/.test(value)) {
+                  const exists = await checkAadhaarExists(value);
+                  return !exists;
+                }
+                return "number must be exactly 12 digits";
+              }
+              return true;
+            }
+          );
+        break;
       default:
         fieldSchema = Yup.mixed();
     }
@@ -33,20 +62,23 @@ export const generateYupSchema = (controls) => {
         control.validation.required?.value &&
         control.controllerType !== "countryMobile"
       ) {
-        fieldSchema = fieldSchema.required(control.validation.required.message);
+        // fieldSchema = fieldSchema.required(control.validation.required.message);
+        fieldSchema = fieldSchema.required(
+          t(`${control.name}.validation.required.message`)
+        );
       }
 
       if (control.validation.maxLength?.value) {
         fieldSchema = fieldSchema.max(
           control.validation.maxLength.value,
-          control.validation.maxLength.message
+          t(`${control.name}.validation.maxLength.message`)
         );
       }
 
       if (control.validation.minLength?.value) {
         fieldSchema = fieldSchema.min(
           control.validation.minLength?.value,
-          control.validation.minLength?.message
+          t(`${control.name}.validation.minLength?.message`)
         );
       }
 
