@@ -31,7 +31,6 @@ function InputController(props) {
                 rest.onBlur?.(event);
               }}
             />
-            {!errors[name] && value && "Adhar card is validated"}
           </>
         );
       }}

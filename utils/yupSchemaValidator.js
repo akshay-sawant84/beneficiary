@@ -63,22 +63,32 @@ export const generateYupSchema = (controls) => {
         control.controllerType !== "countryMobile"
       ) {
         // fieldSchema = fieldSchema.required(control.validation.required.message);
+        // fieldSchema = fieldSchema.required(
+        //   t(`${control.name}.validation.required.message`) ||
+        //     control.validation.required.message
+        // );
         fieldSchema = fieldSchema.required(
-          t(`${control.name}.validation.required.message`)
+          t(`${control.name}.validation.required.message`, {
+            defaultValue: control.validation.required.message,
+          })
         );
       }
 
       if (control.validation.maxLength?.value) {
         fieldSchema = fieldSchema.max(
           control.validation.maxLength.value,
-          t(`${control.name}.validation.maxLength.message`)
+          t(`${control.name}.validation.maxLength.message`, {
+            defaultValue: control.validation.maxLength.message,
+          })
         );
       }
 
       if (control.validation.minLength?.value) {
         fieldSchema = fieldSchema.min(
           control.validation.minLength?.value,
-          t(`${control.name}.validation.minLength?.message`)
+          t(`${control.name}.validation.minLength?.message`, {
+            defaultValue: control.validation.minLength?.message,
+          })
         );
       }
 
