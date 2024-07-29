@@ -3,7 +3,7 @@ import React from "react";
 import { Controller } from "react-hook-form";
 
 function InputController(props) {
-  const { name, control, validation, defaultValue = "", ...rest } = props;
+  const { name, control, validation, defaultValue = "", placeholder, ...rest } = props;
 
   return (
     <Controller
@@ -14,26 +14,24 @@ function InputController(props) {
       render={({
         field: { onChange, onBlur, value },
         formState: { errors },
-      }) => {
-        console.log("errs");
-        return (
-          <>
-            <Input
-              {...rest}
-              id={name}
-              value={value}
-              onChange={(event) => {
-                onChange(event);
-                rest.onChange?.(event);
-              }}
-              onBlur={(event) => {
-                onBlur(event);
-                rest.onBlur?.(event);
-              }}
-            />
-          </>
-        );
-      }}
+      }) => (
+        <Input
+          {...rest}
+          id={name}
+          value={value}
+          placeholder={placeholder} 
+          onChange={(event) => {
+            onChange(event);
+            rest.onChange?.(event);
+          }}
+          onBlur={(event) => {
+            onBlur(event);
+            rest.onBlur?.(event);
+          }}
+          error={!!errors[name]} 
+          helperText={errors[name]?.message}
+        />
+      )}
     />
   );
 }

@@ -1,6 +1,15 @@
 {
   "beneficiary": "Beneficiary",
   "heading": "Bank Customer Details",
+  "Back": "Back",
+  "Next": "Next",
+  "Submit": "Submit",
+  "User Created Successfully": "User Created Successfully",
+  "Clear Redux Storage": "Clear Redux Storage",
+  "title": "Multi-step Form",
+  "Personal Info": "Personal Info",
+  "Account Info": "Account Info",
+  "Bank Account Info": "Bank Account Info",
   "full_name": {
     "label": "Full Name",
     "validation": {
@@ -8,7 +17,48 @@
         "message": "Full Name is required"
       },
       "maxLength": {
-        "message": "Input exceeds maximum length of 3 characters"
+        "message": "Input exceeds maximum length of 50 characters"
+      }
+    }
+  },
+  "first": {
+    "label": "First",
+    "validation": {
+      "required": {
+        "message": "First is required"
+      },
+      "maxLength": {
+        "message": "Input exceeds maximum length of 50 characters"
+      }
+    }
+  },
+  "last": {
+    "label": "Last",
+    "validation": {
+      "required": {
+        "message": "Last Name is required"
+      },
+      "maxLength": {
+        "message": "Input exceeds maximum length of 50 characters"
+      }
+    }
+  },
+  "salary": {
+    "label": "Salary",
+    "validation": {
+      "required": {
+        "message": "Salary is required"
+      },
+      "maxLength": {
+        "message": "Input exceeds maximum length of 50 characters"
+      }
+    }
+  },
+  "pincode": {
+    "label": "Pin Code",
+    "validation": {
+      "required": {
+        "message": "Pin Code is required"
       }
     }
   },
@@ -33,14 +83,6 @@
     "validation": {
       "required": {
         "message": "Mobile Number is required"
-      }
-    }
-  },
-  "pincode": {
-    "label": "Pin Code",
-    "validation": {
-      "required": {
-        "message": "Pin Code is required"
       }
     }
   }

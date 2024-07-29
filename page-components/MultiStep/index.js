@@ -3,13 +3,17 @@ import Stepper from "@mui/material/Stepper";
 import Step from "@mui/material/Step";
 import StepLabel from "@mui/material/StepLabel";
 import { Container, FormContainer, MainHeading } from "./styles";
-import { multiStep as controls } from "./controls";
 import MultiStepForm from "./Form";
+import { useTranslation } from "react-i18next";
+import { generateMultiStep } from "./controls";
 
 function MultiStep() {
+  const { t } = useTranslation("home");
+  const multiStep = generateMultiStep(t);
+
   const [activeStep, setActiveStep] = useState(0);
   const [completed, setCompleted] = useState({});
-  const [formData, setFormData] = useState();
+  const [formData, setFormData] = useState({});
 
   const handleNext = (isStepValid) => {
     if (isStepValid) {
@@ -17,23 +21,19 @@ function MultiStep() {
     }
   };
 
-  console.log("completed", completed);
-
   return (
     <Container>
       <FormContainer>
-        <MainHeading>Multi Step Form</MainHeading>
+        <MainHeading>{t("beneficiary")}</MainHeading>
         <Stepper activeStep={activeStep}>
-          {controls.map((label, index) => {
-            return (
-              <Step key={label.label} completed={completed[index]}>
-                <StepLabel>{label.label}</StepLabel>
-              </Step>
-            );
-          })}
+          {multiStep.map((step, index) => (
+            <Step key={index} completed={completed[index]}>
+              <StepLabel>{step.label}</StepLabel>
+            </Step>
+          ))}
         </Stepper>
         <MultiStepForm
-          controls={controls}
+          controls={multiStep}
           handleNext={handleNext}
           formData={formData}
           setFormData={setFormData}

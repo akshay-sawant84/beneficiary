@@ -1,48 +1,145 @@
 {
-    "beneficiary": "लाभार्थी",
-    "heading": "बैंक ग्राहक विवरण",
-    "full_name": {
-      "label": "पूरा नाम",
-      "validation": {
-        "required": {
-          "message": "पूरा नाम आवश्यक है"
-        },
-        "maxLength": {
-          "message": "इनपुट की अधिकतम लंबाई 3 वर्णों से अधिक है"
-        }
+  "beneficiary": "लाभार्थी",
+  "heading": "बैंक ग्राहक विवरण",
+  "Back": "वापस",
+  "Next": "अगला",
+  "Submit": "सबमिट करें",
+  "User Created Successfully": "उपयोगकर्ता सफलतापूर्वक बनाया गया",
+  "Clear Redux Storage": "रिडक्स स्टोरेज साफ करें",
+  "title": "मल्टीस्टेप फॉर्म",
+  "Personal Info": "व्यक्तिगत जानकारी",
+  "Account Info": "खाता जानकारी",
+  "Bank Account Info": "बैंक खाता जानकारी",
+  
+  "full_name": {
+    "label": "पूरा नाम",
+    "validation": {
+      "required": {
+        "message": "पूरा नाम आवश्यक है"
+      },
+      "maxLength": {
+        "message": "इनपुट की अधिकतम लंबाई 50 वर्णों से अधिक है"
       }
-    },
-    "country": {
-      "label": "देश",
-      "validation": {
-        "required": {
-          "message": "देश आवश्यक है"
-        }
+    }
+  },
+  "first": {
+    "label": "पहला",
+    "validation": {
+      "required": {
+        "message": "पहला आवश्यक है"
+      },
+      "maxLength": {
+        "message": "इनपुट की अधिकतम लंबाई 50 वर्णों से अधिक है"
       }
-    },
-    "address": {
-      "label": "पता",
-      "validation": {
-        "required": {
-          "message": "पता आवश्यक है"
-        }
+    }
+  },
+  "last": {
+    "label": "अंतिम",
+    "validation": {
+      "required": {
+        "message": "अंतिम आवश्यक है"
+      },
+      "maxLength": {
+        "message": "इनपुट की अधिकतम लंबाई 50 वर्णों से अधिक है"
       }
-    },
-    "mobileNumber": {
-      "label": "मोबाइल नंबर",
-      "validation": {
-        "required": {
-          "message": "मोबाइल नंबर आवश्यक है"
-        }
+    }
+  },
+  "salary": {
+    "label": "वेतन",
+    "validation": {
+      "required": {
+        "message": "वेतन आवश्यक है"
+      },
+      "maxLength": {
+        "message": "इनपुट की अधिकतम लंबाई 50 वर्णों से अधिक है"
       }
-    },
-    "pincode": {
-      "label": "पिन कोड",
-      "validation": {
-        "required": {
-          "message": "पिन कोड आवश्यक है"
-        }
+    }
+  },
+  "pincode": {
+    "label": "पिन कोड",
+    "validation": {
+      "required": {
+        "message": "पिन कोड आवश्यक है"
+      }
+    }
+  },
+  "country": {
+    "label": "देश",
+    "validation": {
+      "required": {
+        "message": "देश आवश्यक है"
+      }
+    }
+  },
+  "address": {
+    "label": "पता",
+    "validation": {
+      "required": {
+        "message": "पता आवश्यक है"
+      }
+    }
+  },
+  "bankss": {
+    "label": "बैंक",
+    "validation": {
+      "required": {
+        "message": "बैंक आवश्यक है"
+      },
+      "minLength": {
+        "message": "इनपुट की न्यूनतम लंबाई 4 वर्ण है"
+      }
+    }
+  },
+  "accountNo": {
+    "label": "खाता संख्या",
+    "validation": {
+      "required": {
+        "message": "खाता संख्या आवश्यक है"
+      },
+      "minLength": {
+        "message": "इनपुट की न्यूनतम लंबाई 10 वर्ण है"
+      }
+    }
+  },
+  "ifsc": {
+    "label": "आईएफएससी",
+    "validation": {
+      "required": {
+        "message": "आईएफएससी आवश्यक है"
+      },
+      "minLength": {
+        "message": "इनपुट की न्यूनतम लंबाई 4 वर्ण है"
+      }
+    }
+  },
+  "accountName": {
+    "label": "खाता नाम",
+    "validation": {
+      "required": {
+        "message": "खाता नाम आवश्यक है"
+      }
+    }
+  },
+  "account_no": {
+    "label": "खाता संख्या",
+    "validation": {
+      "required": {
+        "message": "खाता संख्या आवश्यक है"
+      },
+      "minLength": {
+        "message": "इनपुट की न्यूनतम लंबाई 4 वर्ण है"
+      }
+    }
+  },
+  "cibil_score": {
+    "label": "सिबिल स्कोर",
+    "validation": {
+      "required": {
+        "message": "सिबिल स्कोर आवश्यक है"
+      },
+      "minLength": {
+        "message": "इनपुट की न्यूनतम लंबाई 4 वर्ण है"
       }
     }
   }
-  
+}

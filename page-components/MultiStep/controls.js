@@ -5,26 +5,27 @@ import {
   TextFieldController,
 } from "@/forms";
 
-export const multiStep = [
+export const generateMultiStep = (t) => [
   {
-    label: "Personal Info",
+    label: t("Personal Info"),
     controls: [
       {
         controllerType: "input",
         type: "text",
-        name: "fullName",
+        name: "full_name",
         id: "outlined-error-helper-text",
-        label: "Full Name",
+        label: t("Full Name"),
+        placeholder: t("Full Name"),
         grid: 6,
         variant: "outlined",
         validation: {
           required: {
             value: true,
-            message: "Full Name is required",
+            message: t("Full Name is required"),
           },
           maxLength: {
-            value: 3,
-            message: "Input exceeds maximum length of 3 characters",
+            value: 50,
+            message: t("Input exceeds maximum length of 50 characters"),
           },
         },
       },
@@ -33,17 +34,17 @@ export const multiStep = [
         type: "text",
         name: "first",
         id: "outlined-error-helper-text",
-        label: "first",
+        label: t("First"),
         grid: 6,
         variant: "outlined",
         validation: {
           required: {
             value: true,
-            message: "First is required",
+            message: t("First is required"),
           },
           maxLength: {
             value: 50,
-            message: "Input exceeds maximum length of 50 characters",
+            message: t("Input exceeds maximum length of 50 characters"),
           },
         },
       },
@@ -52,17 +53,17 @@ export const multiStep = [
         type: "text",
         name: "last",
         id: "outlined-error-helper-text",
-        label: "last",
+        label: t("Last"),
         grid: 6,
         variant: "outlined",
         validation: {
           required: {
             value: true,
-            message: "last Name is required",
+            message: t("Last Name is required"),
           },
           maxLength: {
             value: 50,
-            message: "Input exceeds maximum length of 50 characters",
+            message: t("Input exceeds maximum length of 50 characters"),
           },
         },
       },
@@ -71,17 +72,17 @@ export const multiStep = [
         type: "text",
         name: "salary",
         id: "outlined-error-helper-text",
-        label: "Salary",
+        label: t("Salary"),
         grid: 6,
         variant: "outlined",
         validation: {
           required: {
             value: true,
-            message: "Salary is required",
+            message: t("Salary is required"),
           },
           maxLength: {
             value: 50,
-            message: "Input exceeds maximum length of 50 characters",
+            message: t("Input exceeds maximum length of 50 characters"),
           },
         },
         dependencies: ["first", "last"],
@@ -91,40 +92,40 @@ export const multiStep = [
         type: "text",
         grid: 6,
         id: "outlined-basic",
-        label: "Pin Code",
+        label: t("Pin Code"),
         variant: "outlined",
         name: "pincode",
         validation: {
           required: {
             value: true,
-            message: "Pin Code is required",
+            message: t("Pin Code is required"),
           },
         },
       },
     ],
   },
   {
-    label: "Account Info",
+    label: t("Account Info"),
     controls: [
       {
         controllerType: "select",
         type: "select",
         name: "country",
-        label: "Country",
+        label: t("Country"),
         id: "outlined-error-helper-text",
         grid: 6,
         validation: {
           required: {
             value: true,
-            message: "Country is required",
+            message: t("Country is required"),
           },
         },
         options: [
-          { label: "India", value: "india" },
-          { label: "Iceland", value: "iceland" },
-          { label: "Algeria", value: "algeria" },
-          { label: "Nepal", value: "nepal" },
-          { label: "Japan", value: "japan" },
+          { label: t("India"), value: "india" },
+          { label: t("Iceland"), value: "iceland" },
+          { label: t("Algeria"), value: "algeria" },
+          { label: t("Nepal"), value: "nepal" },
+          { label: t("Japan"), value: "japan" },
         ],
       },
       {
@@ -132,12 +133,12 @@ export const multiStep = [
         type: "text",
         name: "address",
         id: "outlined-basic",
-        label: "Address",
+        label: t("Address"),
         variant: "outlined",
         validation: {
           required: {
             value: true,
-            message: "Address is required",
+            message: t("Address is required"),
           },
         },
         multiline: true,
@@ -148,17 +149,17 @@ export const multiStep = [
         type: "text",
         name: "bankss",
         id: "outlined-error-helper-text-bank",
-        label: "Bankss",
+        label: t("Bankss"),
         grid: 6,
         variant: "outlined",
         validation: {
           required: {
             value: true,
-            message: "Bankss is required",
+            message: t("Bankss is required"),
           },
           minLength: {
             value: 4,
-            message: "Input min length of 4 characters",
+            message: t("Input min length of 4 characters"),
           },
         },
       },
@@ -167,17 +168,17 @@ export const multiStep = [
         type: "text",
         name: "accountNo",
         id: "outlined-error-helper-text",
-        label: "Account No",
+        label: t("Account No"),
         grid: 6,
         variant: "outlined",
         validation: {
           required: {
             value: true,
-            message: "Account No is required",
+            message: t("Account No is required"),
           },
           minLength: {
             value: 10,
-            message: "Input min length of 4 characters",
+            message: t("Input min length of 4 characters"),
           },
         },
       },
@@ -186,36 +187,36 @@ export const multiStep = [
         type: "text",
         name: "ifsc",
         id: "outlined-error-helper-text",
-        label: "IFSC",
+        label: t("IFSC"),
         grid: 6,
         variant: "outlined",
         validation: {
           required: {
             value: true,
-            message: "IFSC is required",
+            message: t("IFSC is required"),
           },
           minLength: {
             value: 10,
-            message: "Input min length of 4 characters",
+            message: t("Input min length of 4 characters"),
           },
         },
       },
     ],
   },
   {
-    label: "Bank Account",
+    label: t("Bank Account Info"),
     controls: [
       {
         controllerType: "input",
         type: "text",
         name: "accountName",
         id: "outlined-basic",
-        label: "Account name",
+        label: t("Account Name"),
         variant: "outlined",
         validation: {
           required: {
             value: true,
-            message: "Name is required",
+            message: t("Account Name is required"),
           },
         },
       },
@@ -224,17 +225,17 @@ export const multiStep = [
         type: "text",
         name: "account_no",
         id: "outlined-error-helper-text-bank",
-        label: "Account No",
+        label: t("Account No"),
         grid: 6,
         variant: "outlined",
         validation: {
           required: {
             value: true,
-            message: "Account No is required",
+            message: t("Account No is required"),
           },
           minLength: {
             value: 4,
-            message: "Input min length of 4 characters",
+            message: t("Input min length of 4 characters"),
           },
         },
       },
@@ -243,17 +244,17 @@ export const multiStep = [
         type: "text",
         name: "cibil_score",
         id: "outlined-error-helper-text",
-        label: "Account No",
+        label: t("Cibil Score"),
         grid: 6,
         variant: "outlined",
         validation: {
           required: {
             value: true,
-            message: "Cobil Score is required",
+            message: t("Cibil Score is required"),
           },
           minLength: {
             value: 10,
-            message: "Input min length of 4 characters",
+            message: t("Input min length of 4 characters"),
           },
         },
       },
@@ -267,3 +268,10 @@ export const controlMapping = {
   countryMobile: MobileNumberController,
   textArea: TextFieldController,
 };
+
+
+export const buttonLabels = (t) => ({
+  next: t("Next"),
+  back: t("Back"),
+  submit: t("Submit"),
+});

@@ -7,9 +7,7 @@ import FormControl from "@mui/material/FormControl";
 import FormHelperText from "@mui/material/FormHelperText";
 
 function SelectController(props) {
-  const { name, control, value, validation, options = [], ...rest } = props;
-
-  console.log("validation", validation);
+  const { name, control, value, validation, options = [], label, ...rest } = props;
 
   return (
     <Controller
@@ -23,13 +21,12 @@ function SelectController(props) {
         fieldState: { error },
       }) => (
         <FormControl fullWidth error={!!error}>
-          {console.log("erroMs", props)}
-          <InputLabel id="demo-simple-select-label">{rest.label}</InputLabel>
+          <InputLabel id={`select-${name}-label`}>{label}</InputLabel>
           <Select
             {...rest}
             id={name}
-            key={rest.id}
-            label={rest.label}
+            labelId={`select-${name}-label`}
+            label={label}
             value={newValue || ""}
             onChange={(event) => {
               onChange(event);

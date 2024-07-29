@@ -3,7 +3,7 @@ import React from "react";
 import { Controller } from "react-hook-form";
 
 function TextFieldController(props) {
-  const { name, control, value, validation, ...rest } = props;
+  const { name, control, value, validation, placeholder, ...rest } = props;
 
   return (
     <Controller
@@ -19,7 +19,7 @@ function TextFieldController(props) {
         <TextField
           {...rest}
           id={name}
-          key={rest.id}
+          placeholder={placeholder} // Set placeholder here
           value={newValue || ""}
           onChange={(event) => {
             onChange(event);

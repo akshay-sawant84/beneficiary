@@ -1,48 +1,145 @@
 {
-    "beneficiary": "लाभार्थी",
-    "heading": "बँक ग्राहकांचे तपशील",
-    "full_name": {
-      "label": "पूर्ण नाव",
-      "validation": {
-        "required": {
-          "message": "पूर्ण नाव आवश्यक आहे"
-        },
-        "maxLength": {
-          "message": "इनपुटची अधिकतम लांबी ३ अक्षरांपेक्षा अधिक आहे"
-        }
+  "beneficiary": "लाभार्थी",
+  "heading": "बँक ग्राहक तपशील",
+  "Back": "मागे",
+  "Next": "पुढे",
+  "Submit": "सबमिट करा",
+  "User Created Successfully": "वापरकर्ता यशस्वीरित्या तयार केला",
+  "Clear Redux Storage": "रिडक्स स्टोरेज साफ करा",
+  "title": "मल्टीस्टेप फॉर्म",
+  "Personal Info": "वैयक्तिक माहिती",
+  "Account Info": "खाते माहिती",
+  "Bank Account Info": "बँक खाते माहिती",
+  
+  "full_name": {
+    "label": "पूर्ण नाव",
+    "validation": {
+      "required": {
+        "message": "पूर्ण नाव आवश्यक आहे"
+      },
+      "maxLength": {
+        "message": "इनपुटची जास्तीत जास्त लांबी 50 वर्णांपेक्षा जास्त आहे"
       }
-    },
-    "country": {
-      "label": "देश",
-      "validation": {
-        "required": {
-          "message": "देश आवश्यक आहे"
-        }
+    }
+  },
+  "first": {
+    "label": "पहिले",
+    "validation": {
+      "required": {
+        "message": "पहिले आवश्यक आहे"
+      },
+      "maxLength": {
+        "message": "इनपुटची जास्तीत जास्त लांबी 50 वर्णांपेक्षा जास्त आहे"
       }
-    },
-    "address": {
-      "label": "पत्ता",
-      "validation": {
-        "required": {
-          "message": "पत्ता आवश्यक आहे"
-        }
+    }
+  },
+  "last": {
+    "label": "शेवटचे",
+    "validation": {
+      "required": {
+        "message": "शेवटचे आवश्यक आहे"
+      },
+      "maxLength": {
+        "message": "इनपुटची जास्तीत जास्त लांबी 50 वर्णांपेक्षा जास्त आहे"
       }
-    },
-    "mobileNumber": {
-      "label": "मोबाइल नंबर",
-      "validation": {
-        "required": {
-          "message": "मोबाइल नंबर आवश्यक आहे"
-        }
+    }
+  },
+  "salary": {
+    "label": "पगार",
+    "validation": {
+      "required": {
+        "message": "पगार आवश्यक आहे"
+      },
+      "maxLength": {
+        "message": "इनपुटची जास्तीत जास्त लांबी 50 वर्णांपेक्षा जास्त आहे"
       }
-    },
-    "pincode": {
-      "label": "पिन कोड",
-      "validation": {
-        "required": {
-          "message": "पिन कोड आवश्यक आहे"
-        }
+    }
+  },
+  "pincode": {
+    "label": "पिन कोड",
+    "validation": {
+      "required": {
+        "message": "पिन कोड आवश्यक आहे"
+      }
+    }
+  },
+  "country": {
+    "label": "देश",
+    "validation": {
+      "required": {
+        "message": "देश आवश्यक आहे"
+      }
+    }
+  },
+  "address": {
+    "label": "पत्ता",
+    "validation": {
+      "required": {
+        "message": "पत्ता आवश्यक आहे"
+      }
+    }
+  },
+  "bankss": {
+    "label": "बँक",
+    "validation": {
+      "required": {
+        "message": "बँक आवश्यक आहे"
+      },
+      "minLength": {
+        "message": "इनपुटची किमान लांबी 4 वर्ण आहे"
+      }
+    }
+  },
+  "accountNo": {
+    "label": "खाते क्रमांक",
+    "validation": {
+      "required": {
+        "message": "खाते क्रमांक आवश्यक आहे"
+      },
+      "minLength": {
+        "message": "इनपुटची किमान लांबी 10 वर्ण आहे"
+      }
+    }
+  },
+  "ifsc": {
+    "label": "आयएफएससी",
+    "validation": {
+      "required": {
+        "message": "आयएफएससी आवश्यक आहे"
+      },
+      "minLength": {
+        "message": "इनपुटची किमान लांबी 4 वर्ण आहे"
+      }
+    }
+  },
+  "accountName": {
+    "label": "खाते नाव",
+    "validation": {
+      "required": {
+        "message": "खाते नाव आवश्यक आहे"
+      }
+    }
+  },
+  "account_no": {
+    "label": "खाते क्रमांक",
+    "validation": {
+      "required": {
+        "message": "खाते क्रमांक आवश्यक आहे"
+      },
+      "minLength": {
+        "message": "इनपुटची किमान लांबी 4 वर्ण आहे"
+      }
+    }
+  },
+  "cibil_score": {
+    "label": "सिबिल स्कोर",
+    "validation": {
+      "required": {
+        "message": "सिबिल स्कोर आवश्यक आहे"
+      },
+      "minLength": {
+        "message": "इनपुटची किमान लांबी 4 वर्ण आहे"
       }
     }
   }
-  
+}
